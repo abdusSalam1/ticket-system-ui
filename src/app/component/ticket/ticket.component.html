@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-title>Online Delivery Business</mat-card-title>
+  <mat-card-subtitle>Search and monitor for a particular delivery</mat-card-subtitle>
+  <mat-card-content>
+
+    <table mat-table [dataSource]="tickets" class="mat-elevation-z8">
+
+      <!-- Delivery id -->
+      <ng-container matColumnDef="deliveryId">
+        <th mat-header-cell *matHeaderCellDef> Delivery ID </th>
+        <td mat-cell *matCellDef="let ticket"> {{ticket.deliveryId}} </td>
+      </ng-container>
+
+      <!-- Customer type -->
+      <ng-container matColumnDef="customerType">
+        <th mat-header-cell *matHeaderCellDef>Customer Type</th>
+        <td mat-cell *matCellDef="let ticket"> {{ticket.customerType}} </td>
+      </ng-container>
+
+      <!-- delivery status -->
+      <ng-container matColumnDef="deliveryStatus">
+        <th mat-header-cell *matHeaderCellDef> Delivery Status </th>
+        <td mat-cell *matCellDef="let ticket"> {{ticket.deliveryStatus}} </td>
+      </ng-container>
+
+      <!--Expected Delivery Time  -->
+      <ng-container matColumnDef="expectedDeliveryTime">
+        <th mat-header-cell *matHeaderCellDef> Expected Delivery Time </th>
+        <td mat-cell *matCellDef="let ticket"> {{ticket.expectedDeliveryTime}} </td>
+      </ng-container>
+
+      <!--  Time To Reach Destination  -->
+      <ng-container matColumnDef="timeToReachDestination">
+        <th mat-header-cell *matHeaderCellDef> Time To Reach Destination </th>
+        <td mat-cell *matCellDef="let ticket"> {{ticket.timeToReachDestination}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
